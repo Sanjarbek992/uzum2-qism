@@ -1,0 +1,44 @@
+version: '3.3'
+
+services:
+  app:
+    build: .venv
+
+    ports:
+      - "8880:8880"
+    volumes:
+      - .:/app
+
+# postgres uchun containerlarni avtomatik boshqarish
+#version: '3.8'
+#
+#services:
+#  web:
+#    container_name: web_bro
+#    build: .
+#    command: python manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - .:/code
+#    ports:
+#      - "8000:8000"
+#    env_file:
+#      - .env
+#    depends_on:
+#      -database
+#
+#  database:
+#    image: postgres:14-alpine
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data/
+#
+#
+#    environment:
+#      POSTGRES_DB: ${POSTGRES_DB}
+#      POSTGRES_USER: ${POSTGRES_USER}
+#      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+#      POSTGRES_HOST_AUTH_METHOD: trust
+#
+#volumes:
+#  postgres_data:
+
+
